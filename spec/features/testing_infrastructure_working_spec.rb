@@ -20,3 +20,11 @@ feature 'Display player 2hit points' do
     expect(page).to have_content "Eddie has 45000 HP"
   end
 end
+
+feature 'Display attack confirmation' do
+  scenario 'show confirmation of attack' do
+    sign_in_and_play
+    click_button 'Attack player two!'
+    expect(page).to have_content 'Eddie was attacked!'
+  end
+end
