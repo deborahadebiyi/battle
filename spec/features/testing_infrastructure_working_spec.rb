@@ -9,20 +9,14 @@ end
 
 feature 'Display player names' do
   scenario 'gets user input and exposes their names on screen' do
-    visit('/')
-    fill_in :player_name_one, with: 'Ed'
-    fill_in :player_name_two, with: 'Eddie'
-    click_button 'Submit'
+    sign_in_and_play
     expect(page).to have_content 'Ed and Eddie'
   end
 end
 
 feature 'Display player 2hit points' do
   scenario 'show player two specific number of hit points' do
-    visit('/')
-    fill_in :player_name_one, with: 'Ed'
-    fill_in :player_name_two, with: 'Eddie'
-    click_button 'Submit'
+    sign_in_and_play
     expect(page).to have_content "Eddie has 45000 HP"
   end
 end
